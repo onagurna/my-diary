@@ -40,7 +40,7 @@ if len(reads) == 0:
 	target.write("-"*10)
 	target.write("\n")
 target.write(reads)
-target.write(datetime.today())
+target.write(str(datetime.date.today()))
 target.write(':')
 target.write("\n")
 target.write("-" * d)
