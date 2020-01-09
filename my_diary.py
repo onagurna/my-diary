@@ -1,5 +1,5 @@
 import sys
-from datetime import date
+import datetime
 from sys import argv
 import time
 
@@ -40,7 +40,7 @@ if len(reads) == 0:
 	target.write("-"*10)
 	target.write("\n")
 target.write(reads)
-target.write(time.asctime())
+target.write(datetime.today())
 target.write(':')
 target.write("\n")
 target.write("-" * d)
