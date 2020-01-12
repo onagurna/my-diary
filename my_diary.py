@@ -32,21 +32,13 @@ while True:
 		print "I'm going to write these to the file."
 
 		if len(reads) == 0:
-			target.write("-"*10)
-			target.write('My Diary')
-			target.write("-"*10)
-			target.write("\n")
-
+			target.write("-"*10+'My Diary'+"-"*10+"\n")
+		
 		target.write(reads)
-		target.write(str(datetime.date.today()))
-		target.write(':')
-		target.write("\n")
-		target.write("-" * d)
-		target.write("\n")
-		target.write(line)
-		target.write("\n")
-		target.write("-" * d)
-		target.write("\n")
-		
-		
+		date = str(datetime.date.today())
+		result = reads.find(date)
+		if result == -1:
+			target.write(str(datetime.date.today())+':'+"\n")
+		target.write("-" * d+"\n"+line+"\n"+"-" * d+"\n")
+			
 		target.close()
