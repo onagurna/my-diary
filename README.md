@@ -6,7 +6,8 @@ How to run this:
  For example: `python my_diary.py mydiary.txt`
 
 This is the repository to test my skills in Python.
-You have some file, in which you will record data, File begins from note ----My Diary----.
+You have some file, in which you will record data,
+File begins from note ----My Diary----.
 
 This project is about working with diary, list of functions can be found below:
  - Run the program and write answers to the questions, which you see in console
