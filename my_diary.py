@@ -1,4 +1,5 @@
 import sys
+import time
 import datetime
 from sys import argv
 
@@ -35,11 +36,12 @@ while True:
 			target.write("-"*10+'My Diary'+"-"*10 +"\n")
 		
 		target.write(reads)
+		named_tuple = time.localtime()
+		time_string = time.strftime("%H:%M", named_tuple)
 		date = str(datetime.date.today())
 		result = reads.find(date)
 		if result == -1:
 			target.write(date +':'+"\n")
-			target.write("-" * d+"\n")
-		target.write(line+"\n"+"-" * d+"\n")
+		target.write("-"*10+time_string+"-"*10 +"\n"+line+"\n")
 		
 		target.close()
