@@ -36,8 +36,8 @@ while True:
 			target.write("-"*10+'My Diary'+"-"*10 +"\n")
 		
 		target.write(reads)
-		named_tuple = time.localtime()
-		time_string = time.strftime("%H:%M", named_tuple)
+		named_time = time.localtime()
+		time_string = time.strftime("%H:%M", named_time)
 		date = str(datetime.date.today())
 		result = reads.find(date)
 		if result == -1:
