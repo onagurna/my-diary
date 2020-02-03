@@ -26,12 +26,14 @@ while True:
 		print'Now write this date like year(2020)-mounth(01)-day(01)'
 		note = raw_input()
 		result_date = reads.find(note)
-		end = reads.find("-"*17)
+		inf = reads[result_date:-1]
+		end = inf.find("-"*19)
 		if result_date != -1 and end != -1:
-			inf = reads[result_date:end]
-			print inf
+			inf_1 = inf[0:end]
+			print "data is:"+ str(result_date)
+			print "end is:"+ str(end)
+			print inf_1
 		elif result_date != -1 and end == -1:
-			inf = reads[result_date:-1]
 			print inf
 		elif result_date == -1:
 			print "No data"
@@ -65,7 +67,7 @@ while True:
 		result = reads.find(date)
 		if result == -1:
 			if len(reads) != 0:
-				target.write("-"*17)
+				target.write("\n" + "-"*19 + "\n")
 			target.write(date +':'+"\n")
 		target.write("-"*10+time_string+"-"*10 +"\n"+line+"\n")
 		
