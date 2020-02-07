@@ -15,26 +15,22 @@ while True:
 	print 'If you do want find note from some day write "find"'
 
 	choice = raw_input()
+	target = open(filename,'r+')
+	reads = target.read()
+	target.close()
 	if choice == "no":
 		sys.exit()
-
-
 	elif choice == "find":
-		target = open(filename,'r+')
-		reads = target.read()
-		target.close()
 		print'Now write this date like year(2020)-mounth(01)-day(01)'
 		note = raw_input()
 		result_date = reads.find(note)
 		inf = reads[result_date:-1]
 		end = inf.find("-"*19)
 		if result_date != -1 and end != -1:
-			inf_1 = inf[0:end]
-			print "data is:"+ str(result_date)
-			print "end is:"+ str(end)
+			inf_1 = inf[12:end]
 			print inf_1
 		elif result_date != -1 and end == -1:
-			print inf
+			print inf [12:-1]
 		elif result_date == -1:
 			print "No data"
 
@@ -43,15 +39,9 @@ while True:
 		print diary.read()
 		diary.close()
 	elif choice == "yes":
-		target = open(filename,'r+')
-		reads = target.read()
-		target.close()
 		target = open(filename,'w+')
 		print "You can write something in your diary"
 		print "Write:"
-	 
-
-
 		line = raw_input()
 		d_len = len(line)
 		print "I'm going to write these to the file."
